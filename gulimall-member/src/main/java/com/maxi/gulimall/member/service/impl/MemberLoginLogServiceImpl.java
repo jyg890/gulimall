@@ -1,0 +1,30 @@
+package com.maxi.gulimall.member.service.impl;
+
+import com.maxi.gulimall.member.utils.PageUtils;
+import com.maxi.gulimall.member.utils.Query;
+import org.springframework.stereotype.Service;
+import java.util.Map;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+
+
+import com.maxi.gulimall.member.dao.MemberLoginLogDao;
+import com.maxi.gulimall.member.entity.MemberLoginLogEntity;
+import com.maxi.gulimall.member.service.MemberLoginLogService;
+
+
+@Service("memberLoginLogService")
+public class MemberLoginLogServiceImpl extends ServiceImpl<MemberLoginLogDao, MemberLoginLogEntity> implements MemberLoginLogService {
+
+    @Override
+    public PageUtils queryPage(Map<String, Object> params) {
+        IPage<MemberLoginLogEntity> page = this.page(
+                new Query<MemberLoginLogEntity>().getPage(params),
+                new QueryWrapper<MemberLoginLogEntity>()
+        );
+
+        return new PageUtils(page);
+    }
+
+}

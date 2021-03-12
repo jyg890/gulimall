@@ -5,6 +5,13 @@ spring:
     url: jdbc:mysql://121.196.49.189:3310/gulimall_oms
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  application:
+    name: gulimall-order
+
 # MapperScan
 # sql映射文件位置
 mybatis-plus:

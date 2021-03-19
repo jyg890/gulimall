@@ -15,7 +15,7 @@ import java.util.Map;
 
 /**
  * 返回数据
- *
+ *        r继承了hashMap
  * @author Mark sunlightcs@gmail.com
  */
 public class R extends HashMap<String, Object> {
